@@ -1,0 +1,10 @@
+# Activer la réécriture d'URL
+RewriteEngine On
+
+# Permet de gérer les requêtes pour des URLs spécifiques
+RewriteBase /
+
+# Si le fichier ou le dossier demandé n'existe pas, réécrire l'URL vers index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [QSA,L]
