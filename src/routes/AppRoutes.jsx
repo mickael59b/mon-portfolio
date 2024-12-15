@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import React from 'react';
 import { Routes, Route } from 'react-router-dom'; // Pas besoin de BrowserRouter ici
+=======
+// src/AppRoutes.js
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+>>>>>>> 985ed9990ff16ed45eafce5745f39d8010d1c359
 import Home from '../pages/Home';
 import About from '../pages/About';
 import Projects from '../pages/Projects';
@@ -49,9 +55,15 @@ const AppRoutes = () => {
       <Route
         path="/dashboard/projets"
         element={
+<<<<<<< HEAD
           <AdminRoute>
             <ProjectManagement />  {/* Page de gestion des projets */}
           </AdminRoute>
+=======
+            <AdminRoute>
+              <ProjectManagement />  {/* Page de gestion des projets */}
+            </AdminRoute>
+>>>>>>> 985ed9990ff16ed45eafce5745f39d8010d1c359
         }
       />
       <Route path="/dashboard/projet/new" element={

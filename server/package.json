@@ -1,11 +1,22 @@
 {
   "name": "back-end",
   "version": "1.0.0",
+<<<<<<< HEAD
   "main": "server.js",
+=======
+  "main": "index.js",
+>>>>>>> 985ed9990ff16ed45eafce5745f39d8010d1c359
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
+<<<<<<< HEAD
+=======
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+>>>>>>> 985ed9990ff16ed45eafce5745f39d8010d1c359
   "dependencies": {
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.3",
@@ -13,8 +24,13 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
+<<<<<<< HEAD
     "mongoose": "^8.8.4",
     "multer": "^1.4.5-lts.1"
   },
   "license": "ISC"
+=======
+    "mongoose": "^8.8.4"
+  }
+>>>>>>> 985ed9990ff16ed45eafce5745f39d8010d1c359
 }

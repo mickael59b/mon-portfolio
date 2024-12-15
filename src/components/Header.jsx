@@ -10,6 +10,12 @@ const Header = () => {
   };
 
   useEffect(() => {
+<<<<<<< HEAD
+=======
+    // Vous pouvez également ajouter un useEffect pour logguer quand l'état change
+    console.log("User:", user);
+    console.log("IsAuthenticated:", isAuthenticated);
+>>>>>>> 985ed9990ff16ed45eafce5745f39d8010d1c359
   }, [isAuthenticated, user]); // Ceci garantit que l'effet sera déclenché à chaque mise à jour
 
   return (

@@ -129,6 +129,7 @@ section, .section {
   background-color: #f1f1f1;
   cursor: not-allowed;
 }
+<<<<<<< HEAD
 .bg-transparent-danger {
   background: #f6cece !important;
 }
@@ -148,3 +149,5 @@ section, .section {
   line-height: 3.6rem;
   width: 3.6rem;
 }
+=======
+>>>>>>> 985ed9990ff16ed45eafce5745f39d8010d1c359

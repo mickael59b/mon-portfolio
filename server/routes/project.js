@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+<<<<<<< HEAD
 const multer = require('multer');
 const axios = require('axios');
 const Project = require('../models/Project'); // Modèle Mongoose pour les projets
@@ -62,6 +63,29 @@ router.post('/', upload.single('image'), async (req, res) => {
   } catch (err) {
     console.error('Erreur lors de la création du projet:', err);
     res.status(500).json({ message: 'Erreur lors de la création du projet', error: err.message });
+=======
+const fs = require('fs'); // Ajout de l'import fs
+const path = require('path'); // Ajout de l'import path
+const Project = require('../models/Project');
+
+const router = express.Router();
+
+// Route pour créer un projet
+router.post('/', async (req, res) => {
+  try {
+    // Vérification du corps de la requête
+    if (!req.body.title || !req.body.category || !req.body.description) {
+      return res.status(400).json({ message: 'Tous les champs sont requis' });
+    }
+
+    // Créer un nouveau projet avec le titre
+    const project = new Project(req.body);
+    await project.save();
+    return res.status(201).json(project); // Réponse avec le projet créé
+  } catch (err) {
+    console.error('Erreur lors de la création du projet:', err);
+    return res.status(500).json({ message: 'Erreur lors de la création du projet', error: err.message });
+>>>>>>> 985ed9990ff16ed45eafce5745f39d8010d1c359
   }
 });
 
@@ -75,7 +99,11 @@ router.get('/categories', async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 // Récupérer les projets avec filtrage par catégorie et pagination
+=======
+// Récupérer les projets avec option de filtrage par catégorie et pagination
+>>>>>>> 985ed9990ff16ed45eafce5745f39d8010d1c359
 router.get('/', async (req, res) => {
   try {
     const { category, page = 1, limit = 10 } = req.query;
@@ -118,7 +146,11 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 // Supprimer un projet par ID et son image associée sur GitHub
+=======
+// Supprimer un projet par ID
+>>>>>>> 985ed9990ff16ed45eafce5745f39d8010d1c359
 router.delete('/:id', async (req, res) => {
   const { id } = req.params;
   try {
@@ -126,12 +158,17 @@ router.delete('/:id', async (req, res) => {
       return res.status(400).json({ message: 'ID de projet invalide' });
     }
 
+<<<<<<< HEAD
     // Récupérer le projet pour obtenir l'URL de l'image
+=======
+    // Récupérer le projet pour obtenir le chemin de l'image
+>>>>>>> 985ed9990ff16ed45eafce5745f39d8010d1c359
     const project = await Project.findById(id);
     if (!project) {
       return res.status(404).json({ message: 'Projet non trouvé' });
     }
 
+<<<<<<< HEAD
     // Supprimer l'image associée de GitHub
     if (project.image) {
       const fileName = project.image.split('/').pop();
@@ -141,6 +178,17 @@ router.delete('/:id', async (req, res) => {
         headers: {
           Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         },
+=======
+    // Si une image est associée au projet, supprimer le fichier du dossier uploads
+    if (project.image) {
+      const imagePath = path.join(__dirname, '..', 'uploads', path.basename(project.image));
+      fs.unlink(imagePath, (err) => {
+        if (err) {
+          console.error('Erreur lors de la suppression de l\'image:', err);
+        } else {
+          console.log('Image supprimée:', imagePath);
+        }
+>>>>>>> 985ed9990ff16ed45eafce5745f39d8010d1c359
       });
     }
 

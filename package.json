@@ -2,14 +2,20 @@
   "name": "front-end",
   "private": true,
   "version": "0.0.0",
+<<<<<<< HEAD
   "homepage": "https://mickael59b.github.io/mon-portfolio/",
+=======
+>>>>>>> 985ed9990ff16ed45eafce5745f39d8010d1c359
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+<<<<<<< HEAD
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
+=======
+>>>>>>> 985ed9990ff16ed45eafce5745f39d8010d1c359
     "preview": "vite preview"
   },
   "dependencies": {
@@ -35,7 +41,11 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
     "globals": "^15.12.0",
+<<<<<<< HEAD
     "vite": "^6.0.1",
     "gh-pages": "^6.2.0"
+=======
+    "vite": "^6.0.1"
+>>>>>>> 985ed9990ff16ed45eafce5745f39d8010d1c359
   }
 }
